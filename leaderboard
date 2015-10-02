@@ -1,0 +1,24 @@
+#! /usr/bin/env php
+<?php
+
+use IITG\Leaderboard\Commands\CrawlCommand;
+use IITG\Leaderboard\Commands\SetupCommand;
+use Symfony\Component\Console\Application;
+
+require __DIR__ . '/vendor/autoload.php';
+
+
+function array_get(array $array, $key)
+{
+    return array_key_exists($key, $array) ? $array[$key] : null;
+}
+
+function root_dir($path)
+{
+    return __DIR__ . $path;
+}
+
+$app = new Application();
+$app->add(new CrawlCommand());
+
+$app->run();
