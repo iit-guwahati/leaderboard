@@ -1,7 +1,8 @@
 # leaderboard
 
 ```
-./leaderboard
+# Ex for codechef
+./leaderboard crawl http://www.codechef.com/users/[username]
 ```
 
 ### Scrapper Implementation
