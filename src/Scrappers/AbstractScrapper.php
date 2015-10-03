@@ -138,7 +138,8 @@ abstract class AbstractScrapper
             return false;
         }
 
-        $crawler = $this->client->request('GET', $url);
+        $crawler = new Crawler(null, $url); // $this->client->request('GET', $url);
+        $crawler->addContent(file_get_contents($url));
         $this->follow($crawler);
         $this->parse($crawler);
     }
